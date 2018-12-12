@@ -11,7 +11,7 @@
  *```hcl
  * module "lb-public-agents" {
  *   source  = "dcos-terraform/lb-public-agents/azurerm"
- *   version = "~> 0.1"
+ *   version = "~> 0.1.0"
  *
  *   cluster_name = "production"
  *
