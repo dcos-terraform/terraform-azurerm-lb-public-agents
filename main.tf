@@ -33,6 +33,9 @@ module "public-agents" {
   location            = "${var.location}"
   resource_group_name = "${var.resource_group_name}"
 
+  instance_nic_ids       = ["${var.instance_nic_ids}"]
+  ip_configuration_names = ["${var.ip_configuration_names}"]
+
   lb_name_format = "ext-%[1]s"
 
   providers = {
@@ -46,6 +49,8 @@ module "public-agents" {
     protocol     = "Http"
     request_path = "/_haproxy_health_check"
   }
+
+  num = "${var.num}"
 
   tags = "${var.tags}"
 }
