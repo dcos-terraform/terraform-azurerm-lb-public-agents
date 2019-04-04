@@ -10,7 +10,7 @@ EXAMPLE
 ```hcl
 module "lb-public-agents" {
   source  = "dcos-terraform/lb-public-agents/azurerm"
-  version = "~> 0.1.0"
+  version = "~> 0.2.0"
 
   cluster_name = "production"
 
@@ -20,24 +20,23 @@ module "lb-public-agents" {
 }
 ```
 
-
 ## Inputs
 
 | Name | Description | Type | Default | Required |
 |------|-------------|:----:|:-----:|:-----:|
-| additional_rules | List of additional rules | string | `<list>` | no |
-| cluster_name | Name of the DC/OS cluster | string | - | yes |
-| instance_nic_ids | List of instance nic ids created by this module | list | - | yes |
-| ip_configuration_names | List of ip configuration names associated with the instance nic ids | list | - | yes |
-| location | Azure Region | string | - | yes |
-| num | How many instances should be created | string | - | yes |
-| resource_group_name | Name of the azure resource group | string | - | yes |
+| additional\_rules | List of additional rules | list | `<list>` | no |
+| cluster\_name | Name of the DC/OS cluster | string | n/a | yes |
+| instance\_nic\_ids | List of instance nic ids created by this module | list | n/a | yes |
+| ip\_configuration\_names | List of ip configuration names associated with the instance nic ids | list | n/a | yes |
+| location | Azure Region | string | n/a | yes |
+| num | How many instances should be created | string | n/a | yes |
+| resource\_group\_name | Name of the azure resource group | string | n/a | yes |
 | tags | Add custom tags to all resources | map | `<map>` | no |
 
 ## Outputs
 
 | Name | Description |
 |------|-------------|
-| backend_address_pool | Public backend address pool ID |
-| lb_address | LB Address |
+| backend\_address\_pool | backend address pool |
+| lb\_address | lb address |
 
