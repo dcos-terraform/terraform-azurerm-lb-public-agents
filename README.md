@@ -27,7 +27,10 @@ module "lb-public-agents" {
 |------|-------------|:----:|:-----:|:-----:|
 | additional_rules | List of additional rules | string | `<list>` | no |
 | cluster_name | Name of the DC/OS cluster | string | - | yes |
+| instance_nic_ids | List of instance nic ids created by this module | list | - | yes |
+| ip_configuration_names | List of ip configuration names associated with the instance nic ids | list | - | yes |
 | location | Azure Region | string | - | yes |
+| num | How many instances should be created | string | - | yes |
 | resource_group_name | Name of the azure resource group | string | - | yes |
 | tags | Add custom tags to all resources | map | `<map>` | no |
 
