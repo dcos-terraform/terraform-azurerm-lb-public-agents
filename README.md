@@ -31,6 +31,7 @@ module "lb-public-agents" {
 | num | How many instances should be created | string | n/a | yes |
 | resource\_group\_name | Name of the azure resource group | string | n/a | yes |
 | additional\_rules | List of additional rules | list | `<list>` | no |
+| name\_prefix | Name Prefix | string | `""` | no |
 | tags | Add custom tags to all resources | map | `<map>` | no |
 
 ## Outputs
