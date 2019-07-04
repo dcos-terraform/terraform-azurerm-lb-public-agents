@@ -1,5 +1,5 @@
 /**
- * [![Build Status](https://jenkins-terraform.mesosphere.com/service/dcos-terraform-jenkins/job/dcos-terraform/job/terraform-azurerm-lb-public-agents/job/master/badge/icon)](https://jenkins-terraform.mesosphere.com/service/dcos-terraform-jenkins/job/dcos-terraform/job/terraform-azurerm-lb-public-agents/job/master/)
+ * [![Build Status](https://jenkins-terraform.mesosphere.com/service/dcos-terraform-jenkins/buildStatus/icon?job=dcos-terraform%2Fterraform-azurerm-lb-public-agents%2Fsupport%252F0.2.x)](https://jenkins-terraform.mesosphere.com/service/dcos-terraform-jenkins/job/dcos-terraform/job/terraform-azurerm-lb-public-agents/job/support%252F0.2.x/)
  *
  * Azure LB Public Agents
  * ============
@@ -34,8 +34,7 @@ module "public-agents" {
   location            = "${var.location}"
   resource_group_name = "${var.resource_group_name}"
 
-  instance_nic_ids       = ["${var.instance_nic_ids}"]
-  ip_configuration_names = ["${var.ip_configuration_names}"]
+  instance_nic_ids = ["${var.instance_nic_ids}"]
 
   lb_name_format = "ext-%[1]s"
 
