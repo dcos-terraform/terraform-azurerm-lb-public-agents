@@ -35,7 +35,6 @@ module "public-agents" {
   resource_group_name = "${var.resource_group_name}"
 
   instance_nic_ids = ["${var.instance_nic_ids}"]
-  hostname_format  = "${var.hostname_format}"
 
   lb_name_format = "ext-%[1]s"
 
