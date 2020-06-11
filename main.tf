@@ -22,35 +22,36 @@
  *```
  */
 
-provider "azurerm" {}
+provider "azurerm" {
+}
 
 module "public-agents" {
   source  = "dcos-terraform/lb/azurerm"
-  version = "~> 0.2.0"
+  version = "~> 0.3.0"
 
-  cluster_name = "${var.cluster_name}"
-  name_prefix  = "${var.name_prefix}"
+  cluster_name = var.cluster_name
+  name_prefix  = var.name_prefix
 
-  location            = "${var.location}"
-  resource_group_name = "${var.resource_group_name}"
+  location            = var.location
+  resource_group_name = var.resource_group_name
 
-  instance_nic_ids = ["${var.instance_nic_ids}"]
+  instance_nic_ids = var.instance_nic_ids
 
   lb_name_format = "ext-%[1]s"
 
   providers = {
-    azurerm = "azurerm"
+    azurerm = azurerm
   }
 
-  additional_rules = ["${var.additional_rules}"]
+  additional_rules = var.additional_rules
 
-  probe {
+  probe = {
     port         = 9090
     protocol     = "Http"
     request_path = "/_haproxy_health_check"
   }
 
-  num = "${var.num}"
+  num = var.num
 
-  tags = "${var.tags}"
+  tags = var.tags
 }
